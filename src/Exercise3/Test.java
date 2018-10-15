@@ -15,9 +15,6 @@ public class Test {
         today.setDay();
         today.yesterday();
         today.tomorrow();
-        System.out.print("How many days would you like to move ahead: ");
-        today.daysAhead(scan.nextInt());
-
-
+        today.daysAhead();
     }
 }
