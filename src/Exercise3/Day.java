@@ -8,20 +8,40 @@ public class Day {
     private String futureDay;
     private String tomorrow;
     private String yesterday;
+    /**
+     * The currentDayCount and futureDayCount variables are used
+     * to track the day number of the week for a 7 day week(e.g. Monday = 1, Tuesday = 2 etc...)...
+     * */
     private int currentDayCount;
     private int futureDayCount;
-    //Day's class scanner object...
+    //Day class scanner object...
     Scanner scan = new Scanner(System.in);
 
     /**
-     * The Day class constructor that uses the user's input
-     * and makes it lowercase, then assigns it to the currentDay
-     * string variable...
+     * The Day class constructor takes the user's input in
+     * and makes it lowercase, then assigns it to the
+     * currentDay string variable to be tested in the setDay()
+     * method...
      * */
     public Day(String setDay){
         currentDay = setDay.toLowerCase();
     }
 
+    /**
+     * The setDay() method will test the value of the currentDay
+     * string variable to see if the user input is an actual day
+     * of the week. The switch statement has a case for each day
+     * and its different abbreviation for a 7 day week along with
+     * a default case if the user dose not enter a valid day of
+     * the week. If the currentDay variable dose match valid day
+     * of the week case string, the currentDayCount int variable
+     * is assigned the value of that week day(e.g. Monday = 1,
+     * Tuesday = 2 etc...) and the currentDay string variable is
+     * assigned the string of the day fully spelled out that
+     * matches the currentDayCount. After the two variables are
+     * assigned, a print statement displays to the console the
+     * currentDayCount variable and the currentDay string variable.
+     * */
     public void setDay(){
         switch (currentDay){
             case "mon":
@@ -125,7 +145,20 @@ public class Day {
         }
     }
 
-    public String yesterday(){
+    /**
+     * The yesterday() method has a int variable named yesterdayCount that
+     * is first assigned the value of the currentDayCount variable. The
+     * if/else statement checks to see if the yesterdayCount variable is
+     * less than or equal to 1. If the yesterdayCount variable is less
+     * than or equal to 1 the yesterdayCount variable will be set to equal
+     * 7, else if it is greater than 1 the variable will decremented by 1.
+     * After the if/else statement is executed a switch statement will test
+     * the yesterdayCount variable to match the correct number case (e.g. Monday = 1,
+     * Tuesday = 2 etc...) to it, assign the yesterday string variable with the
+     * previous day of the currentDay variable and print the yesterday variable
+     * to the console.
+     * */
+    public void yesterday(){
         int yesterdayCount = currentDayCount;
         if(yesterdayCount <= 1){
             yesterdayCount = 7;
@@ -162,10 +195,22 @@ public class Day {
                 System.out.println("Yesterday was " + yesterday + "." );
                 break;
         }
-        return yesterday;
     }
 
-    public String tomorrow(){
+    /**
+     * The tomorrow() method has a int variable named tomorrowCount that
+     * is first assigned the value of the currentDayCount variable. The
+     * if/else statement checks to see if the tomorrowCount variable is
+     * greater than or equal to 7. If the tomorrowCount variable is greater
+     * than or equal to 7 the tomorrowCount variable will be set to equal
+     * 1, else if it is less than 7 the variable will incremented by 1.
+     * After the if/else statement is executed a switch statement will test
+     * the tomorrowCount variable to match the correct number case(e.g. Monday = 1,
+     * Tuesday = 2 etc...) to it, assign the tomorrow string variable with the
+     * next day of the currentDay variable and print the tomorrow string variable
+     * to the console.
+     * */
+    public void tomorrow(){
         int tomorrowCount = currentDayCount;
         if(tomorrowCount >= 7){
             tomorrowCount = 1;
@@ -202,7 +247,6 @@ public class Day {
                 System.out.println("Tomorrow is " + tomorrow + "." );
                 break;
         }
-        return tomorrow;
     }
 
     /**
@@ -269,8 +313,10 @@ public class Day {
             }
 
             /**
-             * The switch statement selects the correct day for the futureDay
-             * variable based on the futureDayCount variable...
+             * The switch statement will test the futureDayCount
+             * variable and select the correct day for the futureDay
+             * string variable based on the futureDayCount int
+             * variable(e.g. Monday = 1,Tuesday = 2 etc...)...
              * */
             switch (futureDayCount){
                 case 1:
