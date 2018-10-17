@@ -4,162 +4,207 @@ import java.util.Scanner;
 
 public class Day {
     //Day's class variables...
+    public String uInput;
     private String currentDay;
     private String futureDay;
     private String tomorrow;
     private String yesterday;
+
     /**
      * The currentDayCount and futureDayCount variables are used
      * to track the day number of the week for a 7 day week(e.g. Monday = 1, Tuesday = 2 etc...)...
      * */
     private int currentDayCount;
     private int futureDayCount;
+    private int dAhead;
     //Day class scanner object...
     Scanner scan = new Scanner(System.in);
 
     /**
      * The Day class constructor takes the user's input in
      * and makes it lowercase, then assigns it to the
-     * currentDay string variable to be tested in the setDay()
+     * uInput string variable to be tested in the setDay()
      * method...
      * */
     public Day(String setDay){
-        currentDay = setDay.toLowerCase();
+        uInput = setDay.toLowerCase();
     }
 
+    /**The Day class getters and setters methods...*/
+    //This method returns the currentDay private variable...
+    public String getCurrentDay() {
+        return currentDay;
+    }
+    //This method sets the currentDay private variable...
+    public void setCurrentDay(String currentDay) {
+        this.currentDay = currentDay;
+    }
+    //This method returns the futureDay private variable...
+    public String getFutureDay() {
+        return futureDay;
+    }
+    //This method sets the futureDay private variable...
+    public void setFutureDay(String futureDay) {
+        this.futureDay = futureDay;
+    }
+    //This method returns the tomorrow private variable...
+    public String getTomorrow() {
+        return tomorrow;
+    }
+    //This method sets the tomorrow private variable...
+    public void setTomorrow(String tomorrow) {
+        this.tomorrow = tomorrow;
+    }
+    //This method returns the yesterday private variable...
+    public String getYesterday() {
+        return yesterday;
+    }
+    //This method sets the yesterday private variable...
+    public void setYesterday(String yesterday) {
+        this.yesterday = yesterday;
+    }
+    //This method returns the currentDayCount private variable...
+    public int getCurrentDayCount() {
+        return currentDayCount;
+    }
+    //This method sets the currentDayCount private variable...
+    public void setCurrentDayCount(int currentDayCount) {
+        this.currentDayCount = currentDayCount;
+    }
+    //This method returns the futureDayCount private variable...
+    public int getFutureDayCount() {
+        return futureDayCount;
+    }
+    //This method sets the futureDayCount private variable...
+    public void setFutureDayCount(int futureDayCount) {
+        this.futureDayCount = futureDayCount;
+    }
+    //This method returns the dAhead private variable...
+    public int getdAhead() {
+        return dAhead;
+    }
+    //This method sets the dAhead private variable...
+    public void setdAhead(int dAhead) {
+        this.dAhead = dAhead;
+    }
+
+
     /**
-     * The setDay() method will test the value of the currentDay
-     * string variable to see if the user input is an actual day
+     * The setDay() method will test the value of the uInput
+     * string variable to see if the user input is equal an actual day
      * of the week. The switch statement has a case for each day
      * and its different abbreviation for a 7 day week along with
      * a default case if the user dose not enter a valid day of
-     * the week. If the currentDay variable dose match valid day
-     * of the week case string, the currentDayCount int variable
-     * is assigned the value of that week day(e.g. Monday = 1,
-     * Tuesday = 2 etc...) and the currentDay string variable is
-     * assigned the string of the day fully spelled out that
-     * matches the currentDayCount. After the two variables are
-     * assigned, a print statement displays to the console the
-     * currentDayCount variable and the currentDay string variable.
+     * the week. If the uInput variable dose match valid day
+     * of the week case string, the setCurrentDayCount() method
+     * sets the currentDayCount int variable to the value of that
+     * week day(e.g. Monday = 1, Tuesday = 2 etc...) and the
+     * setCurrentDay() method sets the currentDay string variable
+     * to the day fully spelled out that matches the currentDayCount.
+     * After the two variables are assigned, the method returns currentDay
+     * string variable.
      * */
-    public void setDay(){
-        switch (currentDay){
+    public String setDay(){
+        switch (uInput){
             case "mon":
-                currentDayCount = 1;
-                currentDay = "Monday";
-                System.out.println("You entered the " + currentDayCount + "st day of the week: Monday");
+                setCurrentDayCount(1);
+                setCurrentDay("Monday");
                 break;
             case "monday":
-                currentDayCount = 1;
-                currentDay = "Monday";
-                System.out.println("You entered the " + currentDayCount + "st day of the week: Monday");
+                setCurrentDayCount(1);
+                setCurrentDay("Monday");
                 break;
             case  "tu":
-                currentDayCount = 2;
-                currentDay = "Tuesday";
-                System.out.println("You entered the " + currentDayCount + "nd day of the week: Tuesday");
+                setCurrentDayCount(2);
+                setCurrentDay("Tuesday");
                 break;
             case "tue":
-                currentDayCount = 2;
-                currentDay = "Tuesday";
-                System.out.println("You entered the " + currentDayCount + "nd day of the week: Tuesday");
+                setCurrentDayCount(2);
+                setCurrentDay("Tuesday");
                 break;
             case "tues":
-                currentDayCount = 2;
-                currentDay = "Tuesday";
-                System.out.println("You entered the " + currentDayCount + "nd day of the week: Tuesday");
+                setCurrentDayCount(2);
+                setCurrentDay("Tuesday");
                 break;
             case "tuesday":
-                currentDayCount = 2;
-                currentDay = "Tuesday";
-                System.out.println("You entered the " + currentDayCount + "nd day of the week: Tuesday");
+                setCurrentDayCount(2);
+                setCurrentDay("Tuesday");
                 break;
             case "wed":
-                currentDayCount = 3;
-                currentDay = "Wednesday";
-                System.out.println("You entered the " + currentDayCount + "rd day of the week: Wednesday");
+                setCurrentDayCount(3);
+                setCurrentDay("Wednesday");
                 break;
             case "wednesday":
-                currentDayCount = 3;
-                currentDay = "Wednesday";
-                System.out.println("You entered the " + currentDayCount + "rd day of the week: Wednesday");
+                setCurrentDayCount(3);
+                setCurrentDay("Wednesday");
                 break;
             case "th":
-                currentDayCount = 4;
-                currentDay = "Thursday";
-                System.out.println("You entered the " + currentDayCount + "th day of the week: Thursday");
+                setCurrentDayCount(4);
+                setCurrentDay("Thursday");
                 break;
             case "thu":
-                currentDayCount = 4;
-                currentDay = "Thursday";
-                System.out.println("You entered the " + currentDayCount + "th day of the week: Thursday");
+                setCurrentDayCount(4);
+                setCurrentDay("Thursday");
                 break;
             case "thur":
-                currentDayCount = 4;
-                currentDay = "Thursday";
-                System.out.println("You entered the " + currentDayCount + "th day of the week: Thursday");
+                setCurrentDayCount(4);
+                setCurrentDay("Thursday");
                 break;
             case "thurs":
-                currentDayCount = 4;
-                currentDay = "Thursday";
-                System.out.println("You entered the " + currentDayCount + "th day of the week: Thursday");
+                setCurrentDayCount(4);
+                setCurrentDay("Thursday");
                 break;
             case "thursday":
-                currentDayCount = 4;
-                currentDay = "Thursday";
-                System.out.println("You entered the " + currentDayCount + "th day of the week: Thursday");
+                setCurrentDayCount(4);
+                setCurrentDay("Thursday");
                 break;
             case "fri":
-                currentDayCount = 5;
-                currentDay = "Friday";
-                System.out.println("You entered the " + currentDayCount + "th day of the week: Friday");
+                setCurrentDayCount(5);
+                setCurrentDay("Friday");
                 break;
             case "friday":
-                currentDayCount = 5;
-                currentDay = "Friday";
-                System.out.println("You entered the " + currentDayCount + "th day of the week: Friday");
+                setCurrentDayCount(5);
+                setCurrentDay("Friday");
                 break;
             case "sat":
-                currentDayCount = 6;
-                currentDay = "Saturday";
-                System.out.println("You entered the " + currentDayCount + "th day of the week: Saturday");
+                setCurrentDayCount(6);
+                setCurrentDay("Saturday");
                 break;
             case "saturday":
-                currentDayCount = 6;
-                currentDay = "Saturday";
-                System.out.println("You entered the " + currentDayCount + "th day of the week: Saturday");
+                setCurrentDayCount(6);
+                setCurrentDay("Saturday");
                 break;
             case "sun":
-                currentDayCount = 7;
-                currentDay = "Sunday";
-                System.out.println("You entered the " + currentDayCount + "th day of the week: Sunday");
+                setCurrentDayCount(7);
+                setCurrentDay("Sunday");
                 break;
             case "sunday":
-                currentDayCount = 7;
-                currentDay = "Sunday";
-                System.out.println("You entered the " + currentDayCount + "th day of the week: Sunday");
+                setCurrentDayCount(7);
+                setCurrentDay("Sunday");
                 break;
             default:
-                System.out.println("Invalid Entry!");
+                setCurrentDayCount(0);
+                setCurrentDay("Invalid Entry!");
                 break;
         }
+        return getCurrentDay();
     }
 
     /**
      * The yesterday() method has a int variable named yesterdayCount that
-     * is first assigned the value of the currentDayCount variable. The
+     * is first assigned the return value of the getCurrentDayCount() method. The
      * if/else statement checks to see if the yesterdayCount variable is
      * less than or equal to 1. If the yesterdayCount variable is less
      * than or equal to 1 the yesterdayCount variable will be set to equal
      * 7, else if it is greater than 1 the variable will decremented by 1.
      * After the if/else statement is executed a switch statement will test
      * the yesterdayCount variable to match the correct number case (e.g. Monday = 1,
-     * Tuesday = 2 etc...) to it, assign the yesterday string variable with the
-     * previous day of the currentDay variable and print the yesterday variable
-     * to the console.
+     * Tuesday = 2 etc...) to it. Next, the setYesterday() method sets yesterday
+     * string variable with the previous day of the currentDay variable and returns
+     * the getYesterday() method value...
      * */
-    public void yesterday(){
-        int yesterdayCount = currentDayCount;
+    public String yesterday(){
+        int yesterdayCount = getCurrentDayCount();
         if(yesterdayCount <= 1){
             yesterdayCount = 7;
         }else {
@@ -167,51 +212,48 @@ public class Day {
         }
         switch (yesterdayCount ){
             case 1:
-                yesterday = "Monday";
-                System.out.println("Yesterday was " + yesterday + "." );
+                setYesterday("Monday");
                 break;
             case 2:
-                yesterday = "Tuesday";
-                System.out.println("Yesterday was " + yesterday + "." );
+                setYesterday("Tuesday");
                 break;
             case 3:
-                yesterday = "Wednesday";
-                System.out.println("Yesterday was " + yesterday + "." );
+                setYesterday("Wednesday");
                 break;
             case 4:
-                yesterday = "Thursday";
-                System.out.println("Yesterday was " + yesterday + "." );
+                setYesterday("Thursday");
                 break;
             case 5:
-                yesterday = "Friday";
-                System.out.println("Yesterday was " + yesterday + "." );
+                setYesterday("Friday");
                 break;
             case 6:
-                yesterday = "Saturday";
-                System.out.println("Yesterday was " + yesterday + "." );
+                setYesterday("Saturday");
                 break;
             case 7:
-                yesterday = "Sunday";
-                System.out.println("Yesterday was " + yesterday + "." );
+                setYesterday("Sunday");
+                break;
+            default:
+                setYesterday("No valid day was set!");
                 break;
         }
+        return getYesterday();
     }
 
     /**
      * The tomorrow() method has a int variable named tomorrowCount that
-     * is first assigned the value of the currentDayCount variable. The
+     * is set to the return value of the getCurrentDayCount() method. The
      * if/else statement checks to see if the tomorrowCount variable is
      * greater than or equal to 7. If the tomorrowCount variable is greater
      * than or equal to 7 the tomorrowCount variable will be set to equal
      * 1, else if it is less than 7 the variable will incremented by 1.
      * After the if/else statement is executed a switch statement will test
      * the tomorrowCount variable to match the correct number case(e.g. Monday = 1,
-     * Tuesday = 2 etc...) to it, assign the tomorrow string variable with the
-     * next day of the currentDay variable and print the tomorrow string variable
-     * to the console.
+     * Tuesday = 2 etc...) to it. Next, the setTomorrow() method sets the
+     * tomorrow string variable to the next day of the currentDay variable
+     * and returns the getTomorrow() method value...
      * */
-    public void tomorrow(){
-        int tomorrowCount = currentDayCount;
+    public String tomorrow(){
+        int tomorrowCount = getCurrentDayCount();
         if(tomorrowCount >= 7){
             tomorrowCount = 1;
         }else {
@@ -219,57 +261,54 @@ public class Day {
         }
         switch (tomorrowCount){
             case 1:
-                tomorrow = "Monday";
-                System.out.println("Tomorrow is " + tomorrow + "." );
+                setTomorrow("Monday");
                 break;
             case 2:
-                tomorrow = "Tuesday";
-                System.out.println("Tomorrow is " + tomorrow + "." );
+                setTomorrow("Tuesday");
                 break;
             case 3:
-                tomorrow = "Wednesday";
-                System.out.println("Tomorrow is " + tomorrow + "." );
+                setTomorrow("Wednesday");
                 break;
             case 4:
-                tomorrow = "Thursday";
-                System.out.println("Tomorrow is " + tomorrow + "." );
+                setTomorrow("Thursday");
                 break;
             case 5:
-                tomorrow = "Friday";
-                System.out.println("Tomorrow is " + tomorrow + "." );
+                setTomorrow("Friday");
                 break;
             case 6:
-                tomorrow = "Saturday";
-                System.out.println("Tomorrow is " + tomorrow + "." );
+                setTomorrow("Saturday");
                 break;
             case 7:
-                tomorrow = "Sunday";
-                System.out.println("Tomorrow is " + tomorrow + "." );
+                setTomorrow("Sunday");;
+                break;
+            default:
+                setTomorrow("No valid day was set!");
                 break;
         }
+        return getTomorrow();
     }
 
     /**
-     * The daysAhead method has three int variables named daysAhead,
-     * test, and uInput. This method uses a print statement to prompt
+     * The daysAhead method has two int variables named daysAhead and
+     * test. This method uses a print statement to prompt
      * the user for input followed by a while loop to validate that the
      * user's input is an integer. If the user inputs an integer the while
-     * loop is exited and uInput variable is assigned the scanner objects
-     * input, else the user is re-prompted. The test variable is then
-     * assigned the uInput variable divided by 7. Next, an if/else checks
-     * to see if the test variable is less than 1. If the test variable is
-     * less than one the futureDay string is set to the currentDay string. If
-     * test is greater than 1 a nested if/else statement is ran followed
-     * by a switch statement to select the correct day for the futureDay
-     * string variable and a print statement to display the futureDay
-     * string variable...
+     * loop is exited and the scanner objects input is passed to the
+     * setdAhead() method, else the user is re-prompted. The test variable
+     * is then assigned the return value of the getdAhead() method divided
+     * by 7. Next, an if/else checks to see if the test variable is less
+     * than 1. If the test variable is less than one the setFutureDay()
+     * method is set to the getCurrentDay() method return value. If test
+     * is greater than 1 a nested if/else statement is ran followed by a
+     * switch statement to pass the correct future day value to the
+     * setFutureDay() method and a return statement returns the return
+     * value of the getFutureDay() method...
      * */
-    public void daysAhead(){
+    public String daysAhead(){
 
         //The daysAhead method variables...
         int daysAhead;
         int test;
-        int uInput;
 
         //Prompt print statement...
         System.out.print("How many days would you like to move ahead: ");
@@ -284,66 +323,66 @@ public class Day {
         }
 
         //Variable assigning...
-        uInput = scan.nextInt();
-        test = uInput % 7;
+        setdAhead(scan.nextInt());
+        test = getdAhead() % 7;
 
         if(test < 1){
-            futureDay = currentDay;
-            System.out.println(uInput + "" + futureDay);
+            setFutureDay(getCurrentDay());
         }else{
             /**
-             * The else statement adds the test and currentDayCount variables
-             * to the daysAhead variable. The nested if/else statement
-             * checks to see if daysAhead is greater than 7. If daysAhead
-             * is greater than 7 the futureDayCount int variable will be
+             * The else statement adds the test int variable and return
+             * value of the getCurrentDayCount() method to the daysAhead
+             * variable. The nested if/else statement checks to see if the
+             * daysAhead variable is greater than 7. If the daysAhead
+             * variable is greater than 7 the setFutureDayCount() method is
              * set to equal the remainder of the daysAhead variable divided
-             * by 7. If the daysAhead variable is less than or equal to
-             * 7, the futureDayCount int variable will be set to equal the
-             * daysAhead variable. After the outer else statement is executed
-             * the futureDayCount variable will passed to a switch statement
-             * to set the futureDay string variable...
+             * by 7. If the daysAhead variable is less than or equal to 7,
+             * the setFutureDayCount() will be set to equal the daysAhead
+             * variable. After the outer else statement is executed the
+             * return value of the getFutureDayCount() method is passed to a
+             * switch statement to set the setFutureDay() method value...
              * */
-            daysAhead = test + currentDayCount;
+            daysAhead = test + getCurrentDayCount();
             if (daysAhead > 7){
-                futureDayCount = daysAhead % 7;
-                //System.out.println(futureDayCount);
+                setFutureDayCount(daysAhead % 7);
             }else if(daysAhead <= 7) {
-                futureDayCount = daysAhead;
-                //System.out.println(futureDayCount);
+                setFutureDayCount(daysAhead);
             }
 
             /**
-             * The switch statement will test the futureDayCount
-             * variable and select the correct day for the futureDay
-             * string variable based on the futureDayCount int
-             * variable(e.g. Monday = 1,Tuesday = 2 etc...)...
+             * The switch statement will test the return value of the
+             * getFutureDayCount() method variable and selects the
+             * correct day for the setFutureDay() method based on the
+             * return value of the getFutureDayCount() method
+             * (e.g. Monday = 1,Tuesday = 2 etc...)...
              * */
-            switch (futureDayCount){
+            switch (getFutureDayCount()){
                 case 1:
-                    futureDay ="Monday";
+                    setFutureDay("Monday");
                     break;
                 case 2:
-                    futureDay ="Tuesday";
+                    setFutureDay("Tuesday");
                     break;
                 case 3:
-                    futureDay ="Wednesday";
+                    setFutureDay("Wednesday");
                     break;
                 case 4:
-                    futureDay ="Thursday";
+                    setFutureDay("Thursday");
                     break;
                 case 5:
-                    futureDay ="Friday";
+                    setFutureDay("Friday");
                     break;
                 case 6:
-                    futureDay ="Saturday";
+                    setFutureDay("Saturday");
                     break;
                 case 7:
-                    futureDay ="Sunday";
+                    setFutureDay("Sunday");
+                    break;
+                default:
+                    setFutureDay("No valid day was set!");
                     break;
             }
-            //The future day print out...
-            System.out.println(uInput + " days from today will be " + futureDay);
         }
-
+        return getFutureDay();
     }
 }

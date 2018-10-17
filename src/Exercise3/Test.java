@@ -6,28 +6,42 @@ public class Test {
     public static void main(String[]args){
 
         /**
-         * The Test class main method starts with a
-         * string variable dInput and a Scanner object.
-         * A print statement prompts the user to input
-         * the current day and the dInput string variable
-         * is assigned the user's input. The Day class
-         * object is instantiated using the Day class
-         * constructor passing in the dInput string in
-         * its parameter. The today Day object then calls
-         * the setDay(), yesterday(), tomorrow(), and
-         * daysAhead() methods...*/
-
+         * The Test class main method has four string variables
+         * (currentDay,yesterday,tomorrow,futureDay) and
+         * one int variable(days). A Scanner class object is then
+         * instantiated and the Day class constructor passes the
+         * in the Scanner class object's input. The currentDay
+         * variable is assigned to call the Day class setDay()
+         * method. The yesterday variable is assigned to call the
+         * yesterday()method. The tomorrow variable is assigned to
+         * call the tomorrow() method. The futureDay variable is
+         * assigned to call the futureDay() method and the day
+         * variable is assigned to call the getdAhead() method.
+         * After all of the variables have been assigned, four
+         * print statements print the currentDay, yesterday,
+         * tomorrow, days, and futureDay values to the console...
+         * */
         //Variables...
-        String dInput;
+        String currentDay,yesterday, tomorrow, futureDay;
+        int days;
         //Scanner Object...
         Scanner scan = new Scanner(System.in);
+        //Input statements...
         System.out.print("Enter the current day: ");
-        dInput = scan.nextLine();
         //Day class object...
-        Day today = new Day(dInput);
-        today.setDay();
-        today.yesterday();
-        today.tomorrow();
-        today.daysAhead();
+        Day today = new Day(scan.nextLine());
+        //Variable assigning...
+        currentDay = today.setDay();
+        yesterday = today.yesterday();
+        tomorrow = today.tomorrow();
+        futureDay = today.daysAhead();
+        days = today.getdAhead();
+
+        //Output statements...
+        System.out.println("You set the current day as: " + currentDay);
+        System.out.println("Yesterday was: " + yesterday);
+        System.out.println("Tomorrow will be: " + tomorrow);
+        System.out.println(days + " days from today will be: " + futureDay);
+
     }
 }
